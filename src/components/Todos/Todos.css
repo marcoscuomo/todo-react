@@ -12,6 +12,11 @@
   color: #eee;
 }
 
+.todo > p:hover {
+  color: #eee;
+  cursor: pointer;
+}
+
 .todo .buttons {
   display: flex;  
   align-items: center;

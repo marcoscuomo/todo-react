@@ -35,13 +35,33 @@ export default function App() {
     setTodos(newTodos);
   }
 
+  const handleChangeIsCompleted = (idTodo) => {
+    console.log(idTodo);
+    const newTodos = todos.map(todo => {
+      if(todo.id === idTodo){
+        return {
+          ...todo,
+          isCompleted: !todo.isCompleted
+        }        
+      }
+      return todo;
+    });
+    console.log(newTodos);
+    setTodos(newTodos);
+  }
+
   return(
     <div className="container">
       <Title />
-      <AddTodo handleAddTodo={handleAddTodo} />
+      <AddTodo 
+        handleAddTodo={handleAddTodo}        
+      />
 
       <div className="container-todos">
-        <Todos todos={todos} />
+        <Todos 
+          todos={todos} 
+          handleChangeIsCompleted={handleChangeIsCompleted} 
+        />
       </div>
     </div>
   );
