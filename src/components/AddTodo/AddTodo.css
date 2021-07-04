@@ -1,0 +1,20 @@
+.container-add-todo {
+  display: flex;  
+  margin-top: 15px;
+}
+
+.container-add-todo input {
+  flex: 2;
+  margin-right: 10px;
+  height: 40px;
+  background: #444;
+  border: none;
+  border-radius: 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #eee;
+}
+
+.container-add-todo button {
+  flex: 1;    
+}

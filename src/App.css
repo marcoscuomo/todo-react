@@ -1,5 +1,5 @@
 .container {
-  width: 30%;
+  max-width: 500px;
   min-height: 300px;
   margin: 30px auto;
   border: 2px solid chocolate;

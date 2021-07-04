@@ -1,0 +1,30 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #444;
+  border-radius: 5px;
+  margin: 8px 0;
+  padding: 15px 20px;
+}
+
+.todo > p {
+  color: #eee;
+}
+
+.todo .buttons {
+  display: flex;  
+  align-items: center;
+}
+
+.todo .buttons button {
+  margin-right: 15px;
+  color: chocolate;
+  background: none;
+  border: none;
+  font-size: 1rem;
+}
+
+.todo .buttons button:hover {
+  cursor: pointer;
+}
