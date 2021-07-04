@@ -46,7 +46,13 @@ export default function App() {
       }
       return todo;
     });
-    console.log(newTodos);
+    
+    setTodos(newTodos);
+  }
+
+  const handleDeleteTodo = (idTodo) => {
+    
+    const newTodos = todos.filter(todo => todo.id !== idTodo);    
     setTodos(newTodos);
   }
 
@@ -61,6 +67,7 @@ export default function App() {
         <Todos 
           todos={todos} 
           handleChangeIsCompleted={handleChangeIsCompleted} 
+          handleDeleteTodo={handleDeleteTodo}
         />
       </div>
     </div>

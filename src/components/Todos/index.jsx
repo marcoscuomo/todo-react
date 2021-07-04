@@ -1,6 +1,8 @@
+import { CgClose, CgInfo } from 'react-icons/cg';
+
 import './Todos.css';
 
-export default function Todos({ todos, handleChangeIsCompleted }) {
+export default function Todos({ todos, handleChangeIsCompleted, handleDeleteTodo }) {
   
   const handleIsChecked = (idTodo) => {
     handleChangeIsCompleted(idTodo);
@@ -17,8 +19,8 @@ export default function Todos({ todos, handleChangeIsCompleted }) {
             {todo.title}
           </p>
           <div className="buttons">
-            <button>x</button>
-            <button>i</button>
+            <button onClick={() => {handleDeleteTodo(todo.id)}}><CgClose/></button>
+            <button><CgInfo /></button>
           </div>
         </div>
       ))}          
