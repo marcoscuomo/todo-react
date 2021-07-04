@@ -1,29 +1,17 @@
 import './Todos.css';
 
-export default function Todos() {
+export default function Todos({ todos }) {
   return(
     <>
-      <div className="todo">
-        <p>Lavar a louça</p>
-        <div className="buttons">
-          <button>x</button>
-          <button>i</button>
+      {todos.map(todo => (
+        <div className="todo" key={todo.id} style={todo.isCompleted ? {borderLeft: '6px solid chocolate'}: {}}>
+          <p style={todo.isCompleted ? {textDecoration: 'line-through'}: {}}>{todo.title}</p>
+          <div className="buttons">
+            <button>x</button>
+            <button>i</button>
+          </div>
         </div>
-      </div>
-      <div className="todo">
-        <p>Limpar o quarto</p>
-        <div className="buttons">
-          <button>x</button>
-          <button>i</button>
-        </div>
-      </div>    
-      <div className="todo">
-        <p>Limpar a sala</p>
-        <div className="buttons">
-          <button>x</button>
-          <button>i</button>
-        </div>
-      </div>    
+      ))}          
     </>    
   );
 }
