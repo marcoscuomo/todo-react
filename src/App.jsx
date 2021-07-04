@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 import Title from './components/Title';
 import AddTodo from './components/AddTodo';
 import Todos from './components/Todos';
-import { api } from './services/api';
+import TodoDetail from './components/TodoDetail';
 
+import { api } from './services/api';
 import './App.css';
 
 
@@ -58,19 +60,26 @@ export default function App() {
   }
 
   return(
-    <div className="container">
-      <Title />
-      <AddTodo 
-        handleAddTodo={handleAddTodo}        
-      />
+    <Router>
+      <div className="container">
+        <Title />
+        <Route path="/" exact render={() => (
+          <>
+            <AddTodo 
+              handleAddTodo={handleAddTodo}        
+            />
 
-      <div className="container-todos">
-        <Todos 
-          todos={todos} 
-          handleChangeIsCompleted={handleChangeIsCompleted} 
-          handleDeleteTodo={handleDeleteTodo}
-        />
+            <div className="container-todos">
+              <Todos 
+                todos={todos} 
+                handleChangeIsCompleted={handleChangeIsCompleted} 
+                handleDeleteTodo={handleDeleteTodo}
+              />
+            </div>
+          </>
+        )} />
+        <Route path="/:todoTitle" exact component={TodoDetail} />
       </div>
-    </div>
+    </Router>
   );
 }

@@ -1,0 +1,24 @@
+.container-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-detail .button {  
+  margin: 10px 0;
+  width: 30%;
+  text-align: center;
+}
+
+.datail {
+  background: #444;
+  padding: 15px 20px;
+}
+
+.datail h2 {
+  color: chocolate;
+}
+
+.datail p {
+  color: #fff;
+  margin-top: 5px;
+}
